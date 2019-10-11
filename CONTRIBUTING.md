@@ -1,4 +1,4 @@
-# Contributors guidelines to complang
+# Contributors guidelines to samantar_parsers
 
 ## Getting Started
 
