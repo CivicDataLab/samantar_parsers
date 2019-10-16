@@ -2,7 +2,7 @@
 Script for parsing pdfs to htmls. Built for parsing budget speeches
 
 Usage:
-    pdf2html.py --filename=<f> --path=<p>
+    pdf2html.py --filename=<f> [--path=<p>]
 
 Options:
     --filename=<f>      Provide pdf to be converted
