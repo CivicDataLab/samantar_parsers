@@ -1,11 +1,11 @@
-## samantar_parsers
+# samantar_parsers
 
 Scrapers and Parsers for Indian Budget Speech Documents
 
 
-### Installation
+## Installation
 
-Install tesseract
+### Install tesseract
 
 Arch linux
 ```
@@ -17,7 +17,7 @@ Ubuntu
 sudo apt-get install tesseract-ocr
 ```
 
-Download tesseract-data
+### Download tesseract-data
 
 Arch linux
 ```
@@ -29,14 +29,14 @@ Ubuntu
 sudo apt-get install tesseract-ocr-all
 ```
 
-Install [Tabula](https://github.com/tabulapdf/tabula) or [Tabula extractor](https://github.com/tabulapdf/tabula-extractor)
+### Install [Tabula](https://github.com/tabulapdf/tabula) or [Tabula extractor](https://github.com/tabulapdf/tabula-extractor)
 
-### Run Scraper
+## Run Scraper
 ```
 python speech_scraper.py [--path]
 ```
 
-### Parsing
+## Parsing
 
 It is recommended to convert pdfs to text files for better text extraction. HTML markups are messy to parse.
 
@@ -44,7 +44,7 @@ It is recommended to convert pdfs to text files for better text extraction. HTML
 pdf2txt.py -o output.txt <pdf-file>
 ```
 
-If the document is written in legacy font. Try this method:
+### If the document is written in legacy font. Try this:
 
 Convert PDF to image
 ```
