@@ -1,6 +1,6 @@
 # samantar_parsers
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://github.com/CivicDataLab/complang/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://github.com/CivicDataLab/samantar_parsers/blob/master/LICENSE)
 
 Scrapers and Parsers for Indian Budget Speech Documents
 
