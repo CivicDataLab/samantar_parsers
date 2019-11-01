@@ -47,6 +47,7 @@ pdf2txt.py -o output.txt <pdf-file>
 ```
 
 ### If the document is written in legacy font. Try this:
+### This issue arises mainly in budget documents.
 
 Convert PDF to image
 ```
