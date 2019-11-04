@@ -2,10 +2,11 @@
 Script for scraping Budget Speeches (India)
 
 Usage:
-    speech_scraper.py [--path=<p>]
+    speech_scraper.py [--path=<p> --year=<y>]
 
 Options:
     --path=<p>      Specify the path (Optional)
+    --year=<y>      Specify the year (Optional)
 """
 from docopt import docopt
 from typing import List
@@ -14,8 +15,10 @@ from bs4 import BeautifulSoup
 
 BASE_URL = "https://www.indiabudget.gov.in/"
 
+
 def construct_url():
     return BASE_URL + "bspeech.php"
+
 
 def get_table():
     url = construct_url()
@@ -28,10 +31,17 @@ def get_table():
     return "page is not available!"
 
 
+def save_file(content_url, path, filename):
+    response = requests.get(content_url)
+    filename = path + filename
+    with open(filename + ".pdf", 'wb') as f:
+        f.write(response.content)
+
+
 if __name__ == "__main__":
     args = docopt(__doc__)
-
     path = args["--path"]
+    year = args["--year"]
 
     table = get_table()
 
@@ -41,11 +51,17 @@ if __name__ == "__main__":
             try:
                 url = column.find_all('a')[0]['href']
                 if url.endswith('.pdf'):
-                    response = requests.get(BASE_URL + url)
-                    filename = column.find_all('a')[0].contents[0].replace(' ', '_')
+                    name = column.find_all('a')[0].contents[0]
+                    first_year = name.split('-')[0].strip()
+
+                    filename = name.replace(' ', '_')
+                    content_url = BASE_URL + url
                     if path:
-                        filename = path + filename
-                    # with open(filename + ".pdf", 'wb') as f:
-                    #     f.write(response.content)
+                        if year and year == first_year:
+                            save_file(content_url, path, filename)
+                            quit()
+                        if not year:
+                            save_file(content_url, path, filename)
+
             except IndexError:
                 pass
