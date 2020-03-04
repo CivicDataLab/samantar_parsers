@@ -4,6 +4,8 @@ docopt==0.6.2
 pandas==0.25.1
 pdftotree==0.4.0
 pdfminer==20191010
-PIL==6.1.0
+pillow==6.1.0
 pytesseract==0.3.0
 pdf2image==1.9.0
+tesserocr==2.5.0
+tqdm==4.43.0
